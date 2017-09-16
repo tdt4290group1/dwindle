@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.utils import translation
 
 
 class Medicine(models.Model):
@@ -11,8 +12,12 @@ class Medicine(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = 'Medisin'
-        verbose_name_plural = 'Medisiner'
+        if translation.get_language()=='nb':
+            verbose_name = 'Medisin'
+            verbose_name_plural = 'Medisiner'
+        else:
+            verbose_name = 'Medicine'
+            verbose_name_plural = 'Medicines'
 
 
 class Medium(models.Model):
