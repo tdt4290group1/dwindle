@@ -1,5 +1,3 @@
-
-
 """dwindle URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -15,9 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url,include
+from django.conf.urls import url, include
 from django.contrib import admin
+from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/instructor/', include ("instructor.api.urls",namespace='instructor')),]
+    url(r'^obtain-auth-token/$', obtain_auth_token, name='login'),
+    url(r'^api/instructor/', include ("instructor.api.urls",namespace='instructor')),
+]
