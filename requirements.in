@@ -5,3 +5,4 @@ codecov==2.0.9
 django-filter==1.0.4
 markdown==2.6.9
 djangorestframework==3.6.4
+django-cors-headers==2.1.0

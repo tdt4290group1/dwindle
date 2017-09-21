@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^obtain-auth-token/$', obtain_auth_token, name='login'),
     url(r'^api/instructor/', include ("instructor.api.urls",namespace='instructor')),
+    url(r'^api/usermanagement/', include ("usermanagement.api.urls",namespace='usermanagement')),
 ]
