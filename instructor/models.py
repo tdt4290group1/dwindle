@@ -79,7 +79,7 @@ class Dosage(models.Model):
 
 class PlanDosage(Dosage):
     """ Single dose for a given point in a plan """
-    plan = models.ForeignKey(Plan)
+    plan = models.ForeignKey(Plan, related_name='dosages')
     offset = models.DurationField()
 
     class Meta:
